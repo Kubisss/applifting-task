@@ -1,14 +1,8 @@
 import httpx
 import time
-from typing import Optional
 
 from offers_sdk.exceptions import _raise_for_status
 from .token_cache import TokenCache
-
-
-class AuthError(Exception):
-    pass
-
 
 class AuthManager:
     # Takes care about access token:

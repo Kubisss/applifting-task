@@ -1,7 +1,7 @@
 import pytest
 import httpx
 import time
-from offers_sdk.auth import AuthManager, AuthError
+from offers_sdk.auth import AuthManager
 from offers_sdk.exceptions import _raise_for_status, UnauthorizedError, BadRequestError
 
 pytestmark = pytest.mark.asyncio
