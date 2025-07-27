@@ -12,7 +12,8 @@ class Product(BaseModel):
     @field_serializer("id")
     def ser_id(self, value: Any, info: FieldSerializationInfo):
         return str(value)
-    
+
+
 class Offer(BaseModel):
     id: UUID
     price: int
