@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-REM Vytvoření virtuálního prostředí
+REM create a virtual environment if it doesn't exist
 if not exist ".venv\Scripts\activate.bat" (
     python -m venv .venv
     echo Virtual environment created.
@@ -9,14 +9,14 @@ if not exist ".venv\Scripts\activate.bat" (
     echo Virtual environment already exists.
 )
 
-REM Aktivace virtuálního prostředí
+REM Activating the virtual environment
 call .venv\Scripts\activate.bat
 
-REM Instalace požadavků
+REM Installing requirements
 pip install --upgrade pip
 pip install -r requirements.txt
 
-REM Spuštění main.py ze složky examples
+REM Running main.py from examples folder
 python -m examples.main
 
 endlocal
