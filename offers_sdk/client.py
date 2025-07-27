@@ -9,8 +9,10 @@ from .exceptions import _raise_for_status
 class OffersClient:
     # Main client for communication with the Offers API.
     def __init__(self, refresh_token: str, base_url: str):
+        clean_token = refresh_token.strip()
+        self.refresh_token = clean_token
         self.base_url = base_url.rstrip("/")
-        self.auth = AuthManager(refresh_token, base_url)
+        self.auth = AuthManager(clean_token, base_url)
 
     async def _get_headers(self) -> dict:
         token = await self.auth.get_access_token()
