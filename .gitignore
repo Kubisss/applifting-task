@@ -208,3 +208,5 @@ __marimo__/
 
 # Local configuration files
 .auth_token.json
+
+.DS_store
