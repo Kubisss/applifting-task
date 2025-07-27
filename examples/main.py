@@ -13,7 +13,9 @@ async def main():
 
     # 1. Registering a product
     try:
-        new_product = Product(id=uuid.uuid4(), name="iPhone", description="Latest Apple smartphone")
+        new_product = Product(
+            id=uuid.uuid4(), name="iPhone", description="Latest Apple smartphone"
+        )
         product = await client.register_product(new_product)
         print(f"Product registered: {product}")
     except Exception as e:
@@ -24,7 +26,9 @@ async def main():
     try:
         offers = await client.get_offers(str(product.id))
         for offer in offers:
-            print(f"Offer {offer.id}: {offer.price} € (in stock {offer.items_in_stock})")
+            print(
+                f"Offer {offer.id}: {offer.price} € (in stock {offer.items_in_stock})"
+            )
     except Exception as e:
         print(f"Loading offers failed: {e}")
 
