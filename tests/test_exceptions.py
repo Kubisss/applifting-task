@@ -31,7 +31,7 @@ class DummyResponse:
             418,
             APIError,
             "Unhandled client error.",
-        ),  # 418 je nějaký 4xx co nemáš explicitně ošetřený
+        ),  
     ],
 )
 def test_raise_for_status_raises_correct_exceptions(
@@ -49,5 +49,4 @@ def test_raise_for_status_raises_correct_exceptions(
 
 def test_raise_for_status_does_not_raise_for_success():
     response = DummyResponse(200, "OK")
-    # nemělo by vyhodit žádnou výjimku
     _raise_for_status(response)
